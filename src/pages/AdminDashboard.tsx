@@ -94,7 +94,7 @@ export default function AdminDashboard() {
 
       toast({
         title: "Order updated",
-        description: `Order status has been updated to ₹{newStatus}.`,
+        description: `Order status has been updated to ${newStatus}.`,
       });
 
       loadData();
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
 
       toast({
         title: "User updated",
-        description: `User role has been updated to ₹{newRole}.`,
+        description: `User role has been updated to ${newRole}.`,
       });
 
       loadData();
@@ -260,7 +260,7 @@ export default function AdminDashboard() {
                       
                       <Select
                         value={user.role}
-                        onValueChange={(newRole) => updateUserRole(user.id, newRole)}
+                        onValueChange={(newRole) => updateUserRole(user.id, newRole as 'user' | 'seller' | 'admin')}
                       >
                         <SelectTrigger className="w-32">
                           <SelectValue />
