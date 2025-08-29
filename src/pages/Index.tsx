@@ -70,11 +70,16 @@ const Index = () => {
                 </Link>
               </Button>
               {!user && (
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-8 py-6">
-                  <Link to="/auth?mode=signup">
-                    Join SwiftCart
-                  </Link>
-                </Button>
+<Button 
+  variant="outline" 
+  size="lg" 
+  className="border-white text-white hover:bg-white/10 bg-black"
+>
+  <Link to="/auth?mode=signup">
+    Join SwiftCart
+  </Link>
+</Button>
+
               )}
             </div>
           </div>
