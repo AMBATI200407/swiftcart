@@ -73,7 +73,8 @@ const Index = () => {
 <Button 
   variant="outline" 
   size="lg" 
-  className="border-white text-white hover:bg-white/10 bg-black"
+  className="border-white text-white hover:bg-white/20 text-lg px-8 py-6 transition"
+  asChild
 >
   <Link to="/auth?mode=signup">
     Join SwiftCart
