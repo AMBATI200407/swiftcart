@@ -138,7 +138,7 @@ const Index = () => {
             {categories.map((category) => (
               <Link
                 key={category.id}
-                to={`/products?category=${category.id}`}
+                to={`/products?category=₹{category.id}`}
                 className="group"
               >
                 <Card className="hover-lift text-center">

@@ -131,7 +131,7 @@ export default function ProductDetailsPage() {
                 </Badge>
               )}
               <Badge variant={product.stock_quantity > 0 ? "default" : "destructive"}>
-                {product.stock_quantity > 0 ? `${product.stock_quantity} in stock` : 'Out of stock'}
+                {product.stock_quantity > 0 ? `₹{product.stock_quantity} in stock` : 'Out of stock'}
               </Badge>
             </div>
             
@@ -143,7 +143,7 @@ export default function ProductDetailsPage() {
             </div>
             
             <div className="text-4xl font-bold text-primary mb-6">
-              ${product.price.toFixed(2)}
+              ₹{product.price.toFixed(2)}
             </div>
           </div>
 
@@ -234,7 +234,7 @@ export default function ProductDetailsPage() {
                     size="lg"
                   >
                     <ShoppingCart className="mr-2 h-5 w-5" />
-                    Add to Cart - ${(product.price * quantity).toFixed(2)}
+                    Add to Cart - ₹{(product.price * quantity).toFixed(2)}
                   </Button>
                 </div>
               )}

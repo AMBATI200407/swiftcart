@@ -189,7 +189,7 @@ export default function CheckoutPage() {
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
                     <span className="flex-1">{item.name} × {item.quantity}</span>
-                    <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
+                    <span className="font-medium">₹{(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -199,15 +199,15 @@ export default function CheckoutPage() {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₹{total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Delivery Fee</span>
-                  <span>${deliveryFee.toFixed(2)}</span>
+                  <span>₹{deliveryFee.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Tax</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>₹{tax.toFixed(2)}</span>
                 </div>
               </div>
               
@@ -215,7 +215,7 @@ export default function CheckoutPage() {
               
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>${finalTotal.toFixed(2)}</span>
+                <span>₹{finalTotal.toFixed(2)}</span>
               </div>
 
               <Badge variant="secondary" className="w-full justify-center">
@@ -236,7 +236,7 @@ export default function CheckoutPage() {
                     Placing Order...
                   </>
                 ) : (
-                  `Place Order - $${finalTotal.toFixed(2)}`
+                  `Place Order - ₹₹{finalTotal.toFixed(2)}`
                 )}
               </Button>
             </CardContent>

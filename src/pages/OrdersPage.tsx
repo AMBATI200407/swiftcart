@@ -182,7 +182,7 @@ export default function OrdersPage() {
                             <span>{item.products.name} × {item.quantity}</span>
                           </div>
                           <span className="font-medium">
-                            ${(item.unit_price * item.quantity).toFixed(2)}
+                            ₹{(item.unit_price * item.quantity).toFixed(2)}
                           </span>
                         </div>
                       ))}
@@ -205,7 +205,7 @@ export default function OrdersPage() {
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Total</span>
                     <span className="text-lg font-bold text-primary">
-                      ${order.total_price.toFixed(2)}
+                      ₹{order.total_price.toFixed(2)}
                     </span>
                   </div>
                 </div>

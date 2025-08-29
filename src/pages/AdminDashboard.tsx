@@ -94,7 +94,7 @@ export default function AdminDashboard() {
 
       toast({
         title: "Order updated",
-        description: `Order status has been updated to ${newStatus}.`,
+        description: `Order status has been updated to ₹{newStatus}.`,
       });
 
       loadData();
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
 
       toast({
         title: "User updated",
-        description: `User role has been updated to ${newRole}.`,
+        description: `User role has been updated to ₹{newRole}.`,
       });
 
       loadData();
@@ -200,7 +200,7 @@ export default function AdminDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Total Revenue</p>
-                <p className="text-2xl font-bold">${stats.totalRevenue.toFixed(2)}</p>
+                <p className="text-2xl font-bold">₹{stats.totalRevenue.toFixed(2)}</p>
               </div>
               <DollarSign className="h-8 w-8 text-primary" />
             </div>
@@ -309,7 +309,7 @@ export default function AdminDashboard() {
                         Seller: {product.users?.name} | Category: {product.categories?.name}
                       </p>
                       <div className="flex items-center gap-4 mt-1">
-                        <span className="font-bold text-primary">${product.price.toFixed(2)}</span>
+                        <span className="font-bold text-primary">₹{product.price.toFixed(2)}</span>
                         <Badge variant={product.stock_quantity > 0 ? "default" : "destructive"}>
                           {product.stock_quantity} in stock
                         </Badge>
@@ -347,7 +347,7 @@ export default function AdminDashboard() {
                       </div>
                       
                       <div className="flex items-center gap-4">
-                        <span className="font-bold text-lg">${order.total_price.toFixed(2)}</span>
+                        <span className="font-bold text-lg">₹{order.total_price.toFixed(2)}</span>
                         <Select
                           value={order.status}
                           onValueChange={(newStatus) => updateOrderStatus(order.id, newStatus)}
@@ -371,7 +371,7 @@ export default function AdminDashboard() {
                         {order.order_items.map((item: any, index: number) => (
                           <div key={index} className="flex justify-between text-sm">
                             <span>{item.products.name} × {item.quantity}</span>
-                            <span>${(item.unit_price * item.quantity).toFixed(2)}</span>
+                            <span>₹{(item.unit_price * item.quantity).toFixed(2)}</span>
                           </div>
                         ))}
                       </div>

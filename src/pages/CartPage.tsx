@@ -79,7 +79,7 @@ export default function CartPage() {
                       {item.name}
                     </h3>
                     <p className="text-lg font-bold text-primary">
-                      ${item.price.toFixed(2)}
+                      ₹{item.price.toFixed(2)}
                     </p>
                   </div>
 
@@ -118,7 +118,7 @@ export default function CartPage() {
                     </Button>
 
                     <p className="text-sm text-muted-foreground">
-                      Subtotal: ${(item.price * item.quantity).toFixed(2)}
+                      Subtotal: ₹{(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export default function CartPage() {
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
                     <span>{item.name} × {item.quantity}</span>
-                    <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    <span>₹{(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
               </div>
@@ -149,15 +149,15 @@ export default function CartPage() {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>₹{total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Delivery Fee</span>
-                  <span>$2.99</span>
+                  <span>₹2.99</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Tax</span>
-                  <span>${(total * 0.08).toFixed(2)}</span>
+                  <span>₹{(total * 0.08).toFixed(2)}</span>
                 </div>
               </div>
               
@@ -165,11 +165,11 @@ export default function CartPage() {
               
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>${(total + 2.99 + (total * 0.08)).toFixed(2)}</span>
+                <span>₹{(total + 2.99 + (total * 0.08)).toFixed(2)}</span>
               </div>
 
               <Badge variant="secondary" className="w-full justify-center">
-                Free delivery on orders over $50
+                Free delivery on orders over ₹50
               </Badge>
             </CardContent>
             

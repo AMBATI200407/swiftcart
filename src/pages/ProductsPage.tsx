@@ -195,7 +195,7 @@ export default function ProductsPage() {
 
       {/* Products Grid/List */}
       {loading ? (
-        <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+        <div className={`grid gap-6 ₹{viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
           {[...Array(12)].map((_, i) => (
             <Card key={i} className="animate-pulse">
               <div className="aspect-square bg-muted"></div>
@@ -216,7 +216,7 @@ export default function ProductsPage() {
           </p>
         </div>
       ) : (
-        <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
+        <div className={`grid gap-6 ₹{viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1'}`}>
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

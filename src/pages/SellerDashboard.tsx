@@ -218,7 +218,7 @@ export default function SellerDashboard() {
 
       toast({
         title: "Order updated",
-        description: `Order status has been updated to ${newStatus}.`,
+        description: `Order status has been updated to ₹{newStatus}.`,
       });
 
       loadData();
@@ -287,7 +287,7 @@ export default function SellerDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Total Revenue</p>
-                <p className="text-2xl font-bold">${stats.totalRevenue.toFixed(2)}</p>
+                <p className="text-2xl font-bold">₹{stats.totalRevenue.toFixed(2)}</p>
               </div>
               <DollarSign className="h-8 w-8 text-primary" />
             </div>
@@ -311,7 +311,7 @@ export default function SellerDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-muted-foreground">Avg Order Value</p>
-                <p className="text-2xl font-bold">${stats.averageOrderValue.toFixed(2)}</p>
+                <p className="text-2xl font-bold">₹{stats.averageOrderValue.toFixed(2)}</p>
               </div>
               <DollarSign className="h-8 w-8 text-primary" />
             </div>
@@ -464,7 +464,7 @@ export default function SellerDashboard() {
                     
                     <div className="flex items-center justify-between">
   <span className="text-xl font-bold text-primary">
-    ${product.price.toFixed(2)}
+    ₹{product.price.toFixed(2)}
   </span>
   {/* Add this new Badge to show the status */}
   <Badge variant={product.is_active ? "default" : "outline"}>
@@ -512,7 +512,7 @@ export default function SellerDashboard() {
           ) : (
             <div className="space-y-4">
               {orders.map((orderItem) => (
-                <Card key={`${orderItem.orders.id}-${orderItem.id}`}>
+                <Card key={`₹{orderItem.orders.id}-₹{orderItem.id}`}>
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div>
@@ -546,11 +546,11 @@ export default function SellerDashboard() {
                       <div>
                         <p className="font-medium">{orderItem.products.name}</p>
                         <p className="text-sm text-muted-foreground">
-                          Quantity: {orderItem.quantity} × ${orderItem.unit_price.toFixed(2)}
+                          Quantity: {orderItem.quantity} × ₹{orderItem.unit_price.toFixed(2)}
                         </p>
                       </div>
                       <p className="font-bold text-lg">
-                        ${(orderItem.quantity * orderItem.unit_price).toFixed(2)}
+                        ₹{(orderItem.quantity * orderItem.unit_price).toFixed(2)}
                       </p>
                     </div>
                   </CardContent>
